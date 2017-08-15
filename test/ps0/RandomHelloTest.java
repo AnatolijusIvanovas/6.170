@@ -26,7 +26,7 @@ public class RandomHelloTest extends TestCase {
     public void testCrash() {
 	boolean crashed = false;
         try {
-	    RandomHello.main(new String[1]);
+	    RandomHello.main(new String());
         } catch (Exception ex) {
 	    crashed = true;
         }
