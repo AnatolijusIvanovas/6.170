@@ -1,5 +1,7 @@
 package ps0;
 
+import java.util.Random;
+
 /**
  * RandomHello selects a random greeting to display to the user.
  */
@@ -17,6 +19,7 @@ public class RandomHello {
      * @return a random greeting from a list of five different greetings.
      */
     public String sayHello() {
+        Random randomGenerator = new Random();
         return "";
     }
 
