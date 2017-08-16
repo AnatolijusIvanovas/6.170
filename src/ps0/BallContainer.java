@@ -6,11 +6,12 @@ package ps0;
 import java.util.Iterator;
 import java.util.List;
 import java.util.LinkedList;
+import java.util.Collections;
 
 /**
  * This is a container can be used to contain Balls.
  */
-public class BallContainer {
+public class BallContainer implements Iterable<Ball> {
 
     // Contents of the box.
     List<Ball> contents;
@@ -102,4 +103,7 @@ public class BallContainer {
         return false;
     }
 
+    public Iterator<Ball> iterator() {
+        return Collections.unmodifiableList(contents).iterator();
+    }
 }
