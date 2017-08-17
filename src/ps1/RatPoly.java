@@ -96,6 +96,7 @@ public class RatPoly {
     private RatPoly(List<RatTerm> rt) {
         terms = rt;
         // The spec tells us that we don't need to make a copy of 'rt'
+        checkRep();
     }
 
     /** Returns the degree of this RatPoly.
@@ -104,7 +105,6 @@ public class RatPoly {
         if this is "0".
     */
     public int degree() {
-        checkRep();
 
         /* The try-finally clause is an easy way to call checkRep()
          * every time you exit a function.  The code enclosed by
