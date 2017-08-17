@@ -67,4 +67,9 @@ public class RatTerm {
 
     @Override
     public String toString() { return debugPrint(); }
+
+    public int getExpt() {
+        return expt;
+    }
+
 }

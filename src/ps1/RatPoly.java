@@ -41,9 +41,9 @@ public class RatPoly {
     }
 
     // Definitions:
-    //   For a RatPoly p, let C(p,i) be "p.terms.get(i).coeff" and
-    //                        E(p,i) be "p.terms.get(i).expt"
-    //                        length(p) be "p.terms.size()"
+    // For a RatPoly p, let C(p,i) be "p.terms.get(i).coeff" and
+    // E(p,i) be "p.terms.get(i).expt"
+    // length(p) be "p.terms.size()"
     // (These are helper functions that will make it easier for us
     // to write the remainder of the specifications.  They are not
     // executable code; they just represent complex expressions in a
@@ -54,7 +54,7 @@ public class RatPoly {
     // think "coefficient for the ith term in p".)
 
     // Abstraction Function:
-    //   A RatPoly p is the Sum, from i=0 to length(p), of C(p,i)*x^E(p,i)
+    // A RatPoly p is the Sum, from i=0 to length(p), of C(p,i)*x^E(p,i)
     // (This explains what the state of the fields in a RatPoly
     // represents: it is the sum of a series of terms, forming an
     // expression like "C_0 + C_1*x^1 + C_2*x^2 + ...".  If there are no
@@ -82,8 +82,10 @@ public class RatPoly {
         If c is zero, constructs a "0" polynomial.
     */
     public RatPoly(int c, int e) {
+        terms = new ArrayList<RatTerm>();
+        if (c != 0) terms.add(new RatTerm(new RatNum(c), e));
         //TODO: Fill in this method, then remove the RuntimeException
-        throw new RuntimeException("RatPoly constructor unimplemented!");
+        //throw new RuntimeException("RatPoly constructor unimplemented!");
     }
 
 
@@ -110,11 +112,11 @@ public class RatPoly {
          * exited.
          */
         try {
-
             // your code goes here...
-
+            if (terms.size() == 0) return 0;
+            return terms.get(0).getExpt();
             //TODO: Fill in this method, then remove the RuntimeException
-            throw new RuntimeException("RatPoly->degree() unimplemented!");
+            //throw new RuntimeException("RatPoly->degree() unimplemented!");
         }
         finally {
             checkRep();
